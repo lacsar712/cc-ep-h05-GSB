@@ -17,12 +17,12 @@
       <h3 style="margin-top: 0">血缘字段</h3>
       <div class="grid-2">
         <div>
-          <div class="muted">code_commit_sha</div>
-          <div class="mono">{{ lineage.code_commit_sha }}</div>
-        </div>
-        <div>
           <div class="muted">dataset_content_sha256</div>
           <div class="mono">{{ lineage.dataset_content_sha256 }}</div>
+        </div>
+        <div>
+          <div class="muted">code_commit_sha</div>
+          <div class="mono">{{ lineage.code_commit_sha }}</div>
         </div>
         <div>
           <div class="muted">started_by / started_at</div>
@@ -82,7 +82,6 @@
 </template>
 
 <script setup>
-import { codeLabel, datasetLabel } from '../utils/lineageLabels'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useMessage } from 'naive-ui'
