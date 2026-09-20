@@ -5,7 +5,6 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.auth import authenticate_user, create_access_token, get_current_user, require_researcher
-from app.LineageFingerprintSwap import lineage_code, lineage_dataset
 from app.cqrs import (
     ConflictError,
     DomainError,
@@ -214,8 +213,8 @@ def get_lineage(
         project=proj.project,
         name=proj.name,
         status=proj.status,
-        code_commit_sha=lineage_code(proj.dataset_content_sha256, proj.code_commit_sha),
-        dataset_content_sha256=lineage_dataset(proj.dataset_content_sha256, proj.code_commit_sha),
+        code_commit_sha=proj.code_commit_sha,
+        dataset_content_sha256=proj.dataset_content_sha256,
         artifacts=proj.artifacts_json or [],
         metrics=proj.metrics_json or [],
         result_summary=proj.result_summary,

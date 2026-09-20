@@ -82,7 +82,6 @@
 </template>
 
 <script setup>
-import { codeLabel, datasetLabel } from '../utils/lineageLabels'
 import { computed, onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { useMessage } from 'naive-ui'
